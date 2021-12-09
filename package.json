@@ -1,0 +1,23 @@
+{
+  "name": "commerce-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k4iru/commerce-site.git"
+  },
+  "author": "Kyle Cheung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k4iru/commerce-site/issues"
+  },
+  "homepage": "https://github.com/k4iru/commerce-site#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^17.0.2"
+  }
+}
