@@ -1,9 +1,10 @@
 import React from 'react';
+import Home from './pages/Home';
 
 
 // functional react app
 const App = () => {
-    return <div class="test">Hello World</div>;
+    return <Home />;
 };
 
 export default App;
