@@ -73,13 +73,13 @@ const Navbar = () => {
           <Logo>Amazon</Logo>
         </Center>
         <Right>
-          <menuItem>REGISTER</menuItem>
-          <menuItem>SIGN IN</menuItem>
-          <menuItem>
+          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>
             <Badge badgeContent={4} color="primary">
               <ShoppingCartOutlined />
             </Badge>
-          </menuItem>
+          </MenuItem>
         </Right>
       </Wrapper>
     </Container>

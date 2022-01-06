@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
+import { sliderItems } from "../data";
 
 const Container = styled.div`
-  background-color: coral;
   display: flex;
   height: 100vh;
   position: relative;
   width: 100%;
+  overflow: hidden;
 `;
 
 const Arrow = styled.div`
@@ -25,43 +26,84 @@ const Arrow = styled.div`
   right: ${(props) => props.direction === "right" && "10px"};
   top: 0;
   width: 50px;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
+  display: flex;
   height: 100%;
+  transition: all 1s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
-width: 100vw;
-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
+  background-color: #${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
-height: 100%;
-flex: 1;`;
+  height: 100%;
+  flex: 1;
+`;
 
 const Image = styled.img`
-height: 80%;
+  height: 80%;
 `;
 
 const InfoContainer = styled.div`
-flex: 1;`;
+  flex: 1;
+  padding: 50px;
+`;
+
+const Title = styled.h1`
+  font-size: 70px;
+`;
+const Desc = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin: 50px 0px;
+`;
+const Button = styled.button`
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+`;
+
 const Slider = () => {
+  const [slideIndex, updateSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    if (direction == "left") {
+      updateSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      updateSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
   return (
     <div>
       <Container>
-        <Arrow direction="left">
+        <Arrow direction="left" onClick={() => handleClick("left")}>
           <ArrowLeftOutlined />
         </Arrow>
-        <Wrapper>
-            <Slide>
-            <ImgContainer><Image src="https://st.depositphotos.com/1269204/1219/i/950/depositphotos_12196477-stock-photo-smiling-men-isolated-on-the.jpg"/></ImgContainer>
-            <InfoContainer></InfoContainer>
+        <Wrapper slideIndex={slideIndex}>
+          {sliderItems.map((item) => (
+            <Slide bg={item.bg}>
+              <ImgContainer>
+                <Image src={item.img} />
+              </ImgContainer>
+              <InfoContainer>
+                <Title>{item.title}</Title>
+                <Desc>{item.desc}</Desc>
+                <Button>SHOW NOW</Button>
+              </InfoContainer>
             </Slide>
+          ))}
         </Wrapper>
-        <Arrow direction="right">
+        <Arrow direction="right" onClick={() => handleClick("right")}>
           <ArrowRightOutlined />
         </Arrow>
       </Container>
