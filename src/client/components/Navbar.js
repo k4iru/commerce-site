@@ -36,7 +36,7 @@ const Left = styled.div`
   flex: 1;
 `;
 const Center = styled.div`
-display: flex;
+  display: flex;
   align-items: center;
   flex: 1;
   justify-content: center;
@@ -46,7 +46,7 @@ const Logo = styled.h1`
   font-weight: bold;
 `;
 const Right = styled.div`
-display: flex;
+  display: flex;
 
   align-items: center;
   flex: 1;
@@ -54,6 +54,7 @@ display: flex;
 `;
 
 const MenuItem = styled.div`
+  padding-right: 28px;
   font-size: 14px;
   pointer: cursor;
 `;
@@ -65,7 +66,7 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <Search style={{color:"gray", fontSize: 16}}/>
+            <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
 
