@@ -45,14 +45,17 @@ const FilterContainer = styled.div`
   width: 50%;
   margin: 30px 0;
 `;
+
 const Filter = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const FilterTitle = styled.span`
   font-size: 20px;
   fontweight: 200;
 `;
+
 const FilterColor = styled.div`
   width: 20px;
   height: 20px;
@@ -66,6 +69,7 @@ const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
 `;
+
 const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
@@ -74,11 +78,13 @@ const AddContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
 const AmountContainer = styled.div`
   display: flex;
   align-items: center;
   font-weight: 700;
 `;
+
 const Amount = styled.span`
   display: flex;
   width: 30px;
@@ -89,6 +95,7 @@ const Amount = styled.span`
   justify-content: center;
   margin: 0 5px;
 `;
+
 const Button = styled.button`
   padding: 15px;
   border: 2px solid teal;
